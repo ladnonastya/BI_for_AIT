@@ -7,15 +7,20 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+                                  QT += printsupport
 
 TARGET = BI_for_AIT
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    qcustomplot.cpp \
+    piechartwidget.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    qcustomplot.h \
+    piechartwidget.h
 
 FORMS    += mainwindow.ui
 
