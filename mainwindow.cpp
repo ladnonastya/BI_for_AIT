@@ -21,8 +21,8 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionOpen,SIGNAL(triggered()),this,SLOT(openFile()));
     connect(ui->actionSave_as, SIGNAL(triggered()),this,SLOT(saveAs()));
     //test_draw();
-    //connect(ui->pushButton,SIGNAL(triggered()),this,SLOT(drawPieChart()));
-
+    connect(ui->pushButton,SIGNAL(triggered()),this,SLOT(drawPieChart()));
+    //ui->widget->hide();
 }
 
 MainWindow::~MainWindow()
@@ -58,20 +58,6 @@ void MainWindow::openFile()
     ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->resizeRowsToContents();
 }
-
-/*void MainWindow::save()
-{
-    //QString savedFileName=QFileDialog::getSaveFileName(0, "Save As", "", "*.xlsx");
-    QXlsx::Document doc;
-    QXlsx::CellRange cells;
-    cells=doc.dimension();
-    for(int i=0;i<ui->tableWidget->rowCount();i++)
-        for(int j=0;j<ui->tableWidget->columnCount();j++)
-        {
-            doc.write(i+1,j+1,ui->tableWidget->item(i,j)->text());
-        }
-    doc.saveAs(fileName);
-}*/
 
 void MainWindow::saveAs()
 {
@@ -132,8 +118,8 @@ void MainWindow::saveAs()
 //    ui->widget->replot();
 //}
 
-//void MainWindow::drawPieChart()
-//{
+void MainWindow::drawPieChart()
+{
 
-//}
+}
 

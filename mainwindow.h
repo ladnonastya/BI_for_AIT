@@ -26,7 +26,7 @@ private slots:
     void openFile();
     void saveAs();
     void test_draw();
-    //void drawPieChart();
+    void drawPieChart();
 
 private:
     Ui::MainWindow *ui;
