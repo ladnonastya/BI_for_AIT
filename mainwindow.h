@@ -25,8 +25,8 @@ signals:
 private slots:
     void openFile();
     void saveAs();
-    void test_draw();
     void drawPieChart();
+    void drawCostLine();
 
 private:
     Ui::MainWindow *ui;
