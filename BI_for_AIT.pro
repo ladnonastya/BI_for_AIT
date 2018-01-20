@@ -26,3 +26,7 @@ FORMS    += mainwindow.ui
 
 include(3rdparty/qtxlsx/src/xlsx/qtxlsx.pri)
 #include(3rdparty/qsint-0.2.2-src/qsint.pri)
+#include(3rdparty/qsint-0.2.2-src/src/Charts/Charts.pri)
+
+DISTFILES += \
+    piechart.png

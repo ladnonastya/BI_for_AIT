@@ -13,19 +13,11 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout" rowstretch="4,2,1,4,1" columnstretch="1,1,1">
-    <item row="0" column="1">
-     <widget class="PieChartWidget" name="widget" native="true">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout"/>
-     </widget>
-    </item>
+   <layout class="QGridLayout" name="gridLayout" rowstretch="4,0,2,4,2" columnstretch="1,1,1">
     <item row="3" column="2">
      <widget class="QCustomPlot" name="widget_3" native="true"/>
     </item>
@@ -35,7 +27,7 @@
     <item row="2" column="1">
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>PushButton</string>
+       <string>Draw pie-chart</string>
       </property>
      </widget>
     </item>
@@ -49,7 +41,7 @@
     <item row="2" column="2">
      <widget class="QPushButton" name="pushButton_2">
       <property name="text">
-       <string>PushButton</string>
+       <string>Draw average cost</string>
       </property>
      </widget>
     </item>
@@ -63,11 +55,27 @@
     <item row="0" column="0" rowspan="5">
      <widget class="QTableWidget" name="tableWidget"/>
     </item>
-    <item row="1" column="1">
-     <widget class="QWidget" name="widget_5" native="true"/>
-    </item>
     <item row="0" column="2" rowspan="2">
      <widget class="QCustomPlot" name="widget_2" native="true"/>
+    </item>
+    <item row="0" column="1" rowspan="2">
+     <widget class="QLabel" name="label">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>piechart.png</pixmap>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -121,12 +129,6 @@
    <class>QCustomPlot</class>
    <extends>QWidget</extends>
    <header>qcustomplot.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>PieChartWidget</class>
-   <extends>QWidget</extends>
-   <header>piechartwidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

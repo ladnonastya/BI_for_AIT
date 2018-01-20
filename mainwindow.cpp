@@ -11,6 +11,7 @@
 #include <QGraphicsView>
 #include <cstdlib>
 #include <QPainter>
+#include <QPixmap>
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -22,7 +23,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->actionSave_as, SIGNAL(triggered()),this,SLOT(saveAs()));
     connect(ui->pushButton,SIGNAL(clicked(bool)),this,SLOT(drawPieChart()));
     connect(ui->pushButton_2,SIGNAL(clicked(bool)),this,SLOT(drawCostLine()));
-    ui->widget->hide();
+    //ui->widget->hide();
+    QPixmap myPixmap("D:/BI_for_AIT/piechart.png");
+    ui->label->setPixmap(myPixmap);
+    ui->label->hide();
 }
 
 MainWindow::~MainWindow()
@@ -100,16 +104,40 @@ void MainWindow::drawCostLine()
     ui->widget_2->yAxis->setLabel("Average cost");
 
     ui->widget_2->xAxis->setRange(0, 12);
+
+//    QVector<double> ticks;
+//    QVector<QString> labels;
+//    ticks << 1 << 2 << 3 << 4 << 5 << 6 << 7 << 8 << 9 << 10;
+//    labels << "ЮАР" << "Австрия" << "Франция" << "Испания" << "Чили" << "Италия" << "Австралия" << "Португалия" << "Германия" << "США";
+//    ui->widget_2->xAxis->setAutoTicks(false);
+//    ui->widget_2->xAxis->setAutoTickLabels(false);
+//    ui->widget_2->xAxis->setTickVector(ticks);
+//    ui->widget_2->xAxis->setTickVectorLabels(labels);
+//    ui->widget_2->xAxis->setSubTickCount(0);
+//    ui->widget_2->xAxis->setTickLength(0, 4);
+//    ui->widget_2->xAxis->grid()->setVisible(true);
+//    ui->widget_2->xAxis->setRange(0, 8);
+
     ui->widget_2->yAxis->setRange(0,315);
+
+    //ui->widget_2->graph(0)->setData(ticks, y);
 
     ui->widget_2->graph(0)->setLineStyle(QCPGraph::lsNone);
     ui->widget_2->graph(0)->setScatterStyle(QCPScatterStyle(QCPScatterStyle::ssCircle, 4));
 
     ui->widget_2->replot();
+
+    //ui->widget_2->plotLayout()->addElement(0,1,ui->widget_2->legend);
+    //ui->widget_2->xAxis->
 }
 
 void MainWindow::drawPieChart()
 {
-   ui->widget->show();
+    //ui->widget->show();
+//    QPixmap image("https://ibb.co/cWcuob");
+//    ui->label->setPixmap(image);
+    //ui->label->show();
+    //ui->label->setPixmap(myPixmap);
+    ui->label->show();
 }
 
